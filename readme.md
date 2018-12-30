@@ -1,4 +1,5 @@
-# workshy [![Build Status](https://travis-ci.org/terkelg/workshy.svg?branch=master)](https://travis-ci.org/terkelg/workshy)
+# workshy [![Build Status](https://travis-ci.org/terkelg/workshy.svg?branch=master)](https://travis-ci.org/terkelg/workshy) [![Version](https://npmjs.org/package/workshy)](https://badgen.now.sh/npm/v/workshy)
+
 
 > A small (354B) lazy function scheduler for a butter smooth main thread
 
