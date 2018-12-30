@@ -19,6 +19,11 @@ This module is available in three formats:
 $ npm install --save workshy
 ```
 
+The script can also be directly included from [unpkg.com](https://unpkg.com):
+```html
+<script src="https://unpkg.com/workshy"></script>
+```
+
 
 ## Usage
 
