@@ -1,0 +1,44 @@
+{
+  "name": "workshy",
+  "version": "0.0.0-alpha.1",
+  "repository": "terkelg/workshy",
+  "description": "Distribute work over multiple frames and make the main thread run butter smooth",
+  "unpkg": "dist/workshy.min.js",
+  "module": "dist/workshy.mjs",
+  "main": "dist/workshy.js",
+  "license": "MIT",
+  "author": {
+    "name": "Terkel Gjervig",
+    "email": "terkel@terkel.com",
+    "url": "https://terkel.com"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "build": "node builder",
+    "pretest": "npm run build",
+    "prepublishOnly": "npm run build",
+    "test": "tape test/*.js | tap-spec"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "scheduler",
+    "lazy",
+    "idle",
+    "thread",
+    "worker",
+    "workshy",
+    "throttle"
+  ],
+  "devDependencies": {
+    "gzip-size": "^5.0.0",
+    "mkdirplz": "0.0.2",
+    "pretty-bytes": "^5.1.0",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.2",
+    "terser": "^3.10.0"
+  }
+}

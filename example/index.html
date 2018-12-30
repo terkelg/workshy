@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Workshy</title>
+	</head>
+	<body>
+		<div id="app">
+			<button>Click me</button>
+		</div>
+		<script type="module">
+			import workshy from '../src/index.js';
+
+			// test priority
+			let a = workshy(() => console.log('a'));
+			let b = workshy(() => console.log('b'));
+			b();
+			a();
+			a();
+
+			// this is won't block the main thread
+			const log = i => console.log(`Calling ${i}`);
+			for (let i = 0; i < 100; i++) {
+				workshy(() => {
+					fibonacci(24);
+					log(i);
+				})();
+			}
+
+			function fibonacci(num) {
+				if (num <= 1) return 1;
+				return fibonacci(num - 1) + fibonacci(num - 2);
+			}
+		</script>
+	</body>
+</html>
