@@ -49,7 +49,7 @@ a();
 // manually define priority
 const func = workshy(greet, {priority: 2});
 
-// force it to be called immedialty
+// force it to be called immediately
 const func = workshy(greet, {force: true});
 
 // workshy distribute the work over time to
