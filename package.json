@@ -1,8 +1,8 @@
 {
   "name": "workshy",
-  "version": "0.0.0-alpha.1",
+  "version": "0.0.0",
   "repository": "terkelg/workshy",
-  "description": "Distribute work over multiple frames and make the main thread run butter smooth",
+  "description": "A small (354B) lazy function scheduler for a butter smooth main thread",
   "unpkg": "dist/workshy.min.js",
   "module": "dist/workshy.mjs",
   "main": "dist/workshy.js",
