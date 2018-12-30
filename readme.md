@@ -1,8 +1,8 @@
 # workshy [![Build Status](https://travis-ci.org/terkelg/workshy.svg?branch=master)](https://travis-ci.org/terkelg/workshy)
 
-> A small (354B) lazy function scheduler for butter smooth main thread
+> A small (354B) lazy function scheduler for a butter smooth main thread
 
-Async rendering/micro-tasks can still block paint and input because complex UIs can take long to render. Render should be < 10ms for a smooth 60fps experience.
+Async rendering/micro-tasks can still block paint and input because complex UIs can take long to render. Render should be under `10ms` for a smooth `60fps` experience.
 
 Workshy is a tiny (354B) helper that ensure non-blocking rendering and responsive UIs. This is is done by breaking up tasks into smaller chunks executed over multiple frames to ensure smooth updates.
 
