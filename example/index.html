@@ -11,11 +11,11 @@
 			import workshy from '../src/index.js';
 
 			// test priority
-			let a = workshy(() => console.log('a'));
-			let b = workshy(() => console.log('b'));
-			b();
-			a();
-			a();
+			let a = workshy((x) => console.log('a', x));
+			let b = workshy((x) => console.log('b', x));
+			b(1);
+			a(1);
+			a(2);
 
 			// this is won't block the main thread
 			const log = i => console.log(`Calling ${i}`);
