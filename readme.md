@@ -2,9 +2,9 @@
 
 > A small (354B) lazy function scheduler for a butter smooth main thread
 
-Async rendering/micro-tasks can still block paint and input because complex UIs can take long to render. Render should be under `10ms` for a smooth `60fps` experience.
+Workshy is a `throttle` utility that **rate limit**,  **queue**, and **distribute** function executions over time to prevent the main thread from becoming unresponsive.
 
-Workshy is a tiny (354B) helper that ensure non-blocking rendering and responsive UIs. This is is done by breaking up tasks into smaller chunks executed over multiple frames to ensure smooth updates.
+Unlike a standard throttle function, and to ensure non-blocking rendering and responsive UIs, `workshy` break up functions into smaller chunks executed over time if necessary.
 
 This module is available in three formats:
 
@@ -39,12 +39,13 @@ workshy(greet)();
 
 // tasks are only called once, but
 // multiple calls increases priority
-const a = workshy(() => console.log('A'));
-const b = workshy(() => console.log('B'));
-b();
-a();
-a();
-// => A, B
+const a = workshy(x => console.log(`A: ${x}`));
+const b = workshy(x => console.log(`B: ${x}`));
+b(1);
+a(1);
+a(2);
+// => A: 2
+// => B: 1
 
 // manually define priority
 const func = workshy(greet, {priority: 2});
@@ -69,15 +70,17 @@ Returns: `function`
 #### task
 Type: `function`
 
-Call returned function to queue task. It will be called as soon as possible.
+Aaccepts any function a returns a `function` (a function that wraps your original function). Call returned function to queue task.
 
-> **Important:** Task are only called _once_.<br> Calling the same task multiple times just increases its priority.
+The returned `function` will execute your function with the latest arguments provided to it as soon as possible based on queue length and prioroty.
+
+> **Important:** Task are only called _once_.<br> Calling the same task multiple times increases its priority.
 
 #### options.priority
 Type: `Number`<br>
 Default: `0`
 
-Tasks are sorted by priority. Default are
+Tasks are sorted by priority. Functions with high porprty are called first.
 
 > **Important:** Priority also increas if a taks is called multiple times.
 
