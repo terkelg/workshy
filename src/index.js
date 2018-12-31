@@ -14,7 +14,7 @@ function workshy() {
 		while ((deadline.timeRemaining() > 0 || deadline.didTimeout) && tasks.length > 0) {
 			const fn = tasks.shift();
 			fn._scheduled = false;
-			fn();
+			fn(...fn._args);
 		}
 		tasks.length > 0 ? start() : running = false;
 	}
@@ -33,10 +33,11 @@ function workshy() {
 	}
 
 	return function(fn, {force = false, priority = 0} = {}) {
-		return () => {
+		return (...args) => {
+			fn._args = args;
 			if (force) {
 				fn._scheduled = false;
-				fn();
+				fn(...args)
 			} else if (!fn._scheduled) {
 				tasks.push(fn);
 				fn._scheduled = true;
