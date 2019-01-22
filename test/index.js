@@ -1,4 +1,4 @@
-global.requestIdleCallback = false;
+global.window = { requestIdleCallback: false }
 
 const test = require('tape');
 const fn = require('../dist/workshy');
