@@ -1,4 +1,4 @@
-const onIdle = requestIdleCallback || function (handler) {
+const onIdle = window.requestIdleCallback || function (handler) {
 	const start = Date.now();
 	return setTimeout(() => handler({ didTimeout: false, timeRemaining: () => Math.max(0, 50 - (Date.now() - start)) }), 1);
 };
