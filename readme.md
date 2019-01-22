@@ -1,6 +1,6 @@
 # workshy [![Build Status](https://travis-ci.org/terkelg/workshy.svg?branch=master)](https://badgen.now.sh/npm/v/workshy) [![Version](https://badgen.now.sh/npm/v/workshy)](https://npmjs.com/package/workshy)
 
-> A small (371B) lazy function scheduler for a butter smooth main thread
+> A small (376B) lazy function scheduler for a butter smooth main thread
 
 Workshy is a `throttle` utility that **rate limit**,  **queue**, and **distribute** function executions over time to prevent the main thread from becoming unresponsive.
 
