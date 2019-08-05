@@ -1,6 +1,6 @@
 {
   "name": "workshy",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "repository": "terkelg/workshy",
   "description": "A small (354B) lazy function scheduler for a butter smooth main thread",
   "unpkg": "dist/workshy.min.js",
