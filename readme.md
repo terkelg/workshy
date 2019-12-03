@@ -70,7 +70,7 @@ Returns: `function`
 #### task
 Type: `function`
 
-Aaccepts any function a returns a `function` (a function that wraps your original function). Call returned function to queue task.
+Accepts any function a returns a `function` (a function that wraps your original function). Call returned function to queue task.
 
 The returned `function` will execute your function with the latest arguments provided to it as soon as possible based on queue length and prioroty.
 
@@ -80,9 +80,9 @@ The returned `function` will execute your function with the latest arguments pro
 Type: `Number`<br>
 Default: `0`
 
-Tasks are sorted by priority. Functions with high porprty are called first.
+Tasks are sorted by priority. Functions with high priority are called first.
 
-> **Important:** Priority also increas if a taks is called multiple times.
+> **Important:** Priority also increase if a task is called multiple times.
 
 ```js
 workshy(() => console.log('Hello World'), {force: false, priority: 2});
